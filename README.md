@@ -15,6 +15,7 @@
   - The data you used
   - The model you created
   - The results you obtained
+- Make sure to not commit __pycache__ files
 - Create a requirements.txt file to document the packages you used
 - Create a .gitignore file to ignore the data files
 - Create a branch for your project on this repository
