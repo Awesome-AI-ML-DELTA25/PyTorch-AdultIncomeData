@@ -16,20 +16,30 @@ The main objectives of this project are:
 ## ⚙️ Installation & Usage
 
 ### 1. Clone the Repository
-
+```bash
 git clone https://github.com/Awesome-AI-ML-DELTA25/PyTorch-AdultIncomeData.git
+```
+```bash
 cd PyTorch-AdultIncomeData
-
+```
 ### 2. Create & Activate Conda Environment
+```bash
 conda create -n income-pytorch python=3.12
+```
+```bash
 conda activate income-pytorch
+```
 
 ### 3. Install Dependencies
+```bash
 pip install -r requirements.txt
+```
 
 ### 4. Run Training
 e.g,
+```bash
 python main.py --data-path dataset/adult_income_cleaned.csv --epochs 50 --lr 0.001
+```
 (including data is optional if there is any error in your code)
 
 ## 📊 Loss Curve:
@@ -41,7 +51,9 @@ The graph shows convergence and that the model generalizes well without overfitt
 
 ## 📈 Figures & Results
 ### 1.  Trial 1
+```bash
 python main.py --epochs 50 --lr 0.001
+```
 ![Figure_1](graphs/Figure_1.png)
 - **Accuracy**: 0.8451  
 - **Precision**: 0.7171  
@@ -51,18 +63,22 @@ python main.py --epochs 50 --lr 0.001
 
 🖼️ Ideal Training Behavior
 
-    Observation: Both training and testing losses decrease smoothly and remain close throughout all 100 epochs.
+Observation: Both training and testing losses decrease smoothly and remain close throughout all 100 epochs.
 
-    Interpretation:
+Interpretation:
 
-        Excellent generalization — the model is learning patterns present in both training and validation sets.
+    Excellent generalization — the model is learning patterns present in both training and validation sets.
 
-        No overfitting or underfitting is visible.
+    No overfitting or underfitting is visible.
 
-    Conclusion: This is the best model among the three.
+Conclusion: This is the best model among the three.
+
+
 
 ### 2.  Trial 2
+```bash
 python main.py --epochs 100 --lr 0.001
+```
 ![Figure_2](graphs/Figure_2.png)
 - **Accuracy**: 0.8568  
 - **Precision**: 0.7402 
@@ -71,18 +87,20 @@ python main.py --epochs 100 --lr 0.001
 
 🖼️ Overfitting Detected
 
-    Observation: Training loss keeps decreasing steadily, while test loss starts increasing after ~30 epochs.
+Observation: Training loss keeps decreasing steadily, while test loss starts increasing after ~30 epochs.
 
-    Interpretation:
+Interpretation:
 
-        The model is memorizing training data rather than generalizing.
+    The model is memorizing training data rather than generalizing.
 
-        There's overfitting after a certain point due to excess training or too many parameters.
+    There's overfitting after a certain point due to excess training or too many parameters.
 
-    Conclusion: Early stopping or regularization (dropout, weight decay) can beused to avoid this, but right now overfitted model
+Conclusion: Early stopping or regularization (dropout, weight decay) can beused to avoid this, but right now overfitted model
 
 ### 3.  Trial 3
+```bash
 python main.py --epochs 100 --lr 0.1
+```
 ![Figure_3](graphs/Figure_3.png)
 - **Accuracy**: 0.8582  
 - **Precision**: 0.7504 
@@ -91,12 +109,12 @@ python main.py --epochs 100 --lr 0.1
 
 🖼️ Poor Training Behavior
 
-    Observation: Training and testing losses start extremely high (~4.5+) and drop sharply in the first few epochs. After that, both losses plateau almost instantly.
+Observation: Training and testing losses start extremely high (~4.5+) and drop sharply in the first few epochs. After that, both losses plateau almost instantly.
 
-    Interpretation:
+Interpretation:
 
-        The loss plummets due to learning some trivial pattern, but training halts due to a probable issue like too low learning rate, data quality, or model underfitting.
+    The loss plummets due to learning some trivial pattern, but training halts due to a probable issue like too low learning rate, data quality, or model underfitting.
 
-        Early stagnation indicates that the model isn't improving or learning complex patterns.
+    Early stagnation indicates that the model isn't improving or learning complex patterns.
 
-    Conclusion: Likely an unsuccessful training attempt — not ideal for reporting.
+Conclusion: Likely an unsuccessful training attempt — not ideal for reporting.
