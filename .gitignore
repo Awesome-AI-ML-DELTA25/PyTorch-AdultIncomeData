@@ -1,0 +1,38 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# PyTorch checkpoints and saved models
+*.pth
+*.pt
+
+# Logs and databases
+*.log
+*.sqlite3
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Dataset files (large data files, you don't want to push)
+dataset/
+data/
+*.csv
+
+# Environment files
+.env
+.venv/
+env/
+venv/
+
+# VSCode settings
+.vscode/
+
+# Mac system files
+.DS_Store
