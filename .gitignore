@@ -9,10 +9,6 @@ dist/
 *.egg-info/
 .eggs/
 
-# PyTorch checkpoints and saved models
-*.pth
-*.pt
-
 # Logs and databases
 *.log
 *.sqlite3
