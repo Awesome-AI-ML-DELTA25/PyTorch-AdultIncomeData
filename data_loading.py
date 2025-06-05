@@ -51,6 +51,5 @@ def load_adult_income_data(path="dataset/adult_income_clean.csv"):
     input_dim = X_train_tensor.shape[1]
     return X_train_tensor, y_train_tensor, X_test_tensor, y_test_tensor, input_dim
 
-if __name__ == "__main__":
-    X_train, y_train, X_test, y_test, input_dim = load_adult_income_data("dataset/adult_income_clean.csv")
-    print(f"Train samples: {X_train.shape[0]}, Test samples: {X_test.shape[0]}, Features: {input_dim}")
+
+

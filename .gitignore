@@ -20,10 +20,7 @@ dist/
 # Jupyter Notebook checkpoints
 .ipynb_checkpoints/
 
-# Dataset files (large data files, you don't want to push)
-dataset/
-data/
-*.csv
+
 
 # Environment files
 .env

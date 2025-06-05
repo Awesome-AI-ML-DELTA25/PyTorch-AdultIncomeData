@@ -21,3 +21,33 @@
 - Create a branch for your project on this repository
 
 The best project will be merged into the main branch for showcase! Good luck!
+
+
+
+
+
+trial1
+--epochs 50 --lr 0.001
+res1
+Accuracy : 0.8451
+Precision: 0.7171
+Recall   : 0.5880
+F1 Score : 0.6462
+
+
+trial2
+--epochs 100 --lr 0.001
+res2
+Accuracy : 0.8568
+Precision: 0.7402
+Recall   : 0.6238
+F1 Score : 0.6770
+
+
+trial3
+--epochs 100 --lr 0.1
+res3
+Accuracy : 0.8582
+Precision: 0.7504
+Recall   : 0.6153
+F1 Score : 0.6762

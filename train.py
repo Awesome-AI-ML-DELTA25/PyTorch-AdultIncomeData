@@ -24,3 +24,5 @@ def train(model, X_train, y_train, X_test, y_test, criterion, optimizer, epochs=
         tqdm.write(f"Epoch {epoch+1}/{epochs}, Train Loss: {loss.item():.4f}, Test Loss: {test_loss.item():.4f}")
 
     return train_losses, test_losses
+
+

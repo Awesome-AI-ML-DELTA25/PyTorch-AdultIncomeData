@@ -1,5 +1,6 @@
 import os
 import matplotlib.pyplot as plt
+plt.use("Agg")  # Use non-GUI backend
 
 def plot_losses(train_losses, test_losses):
     plt.figure(figsize=(8, 5))
