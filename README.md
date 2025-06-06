@@ -10,7 +10,7 @@ This project predicts whether an individual's income exceeds \$50K/year using th
 
 - **Source:** [UCI Adult Dataset](https://archive.ics.uci.edu/ml/datasets/adult)
 - **Preprocessing:**  
-  - Cleaned and exported as `preprocessed_data.csv`
+  - Cleaned and exported as `data/preprocessed_data.csv`
   - Categorical features one-hot encoded
   - Numerical features standardized
   - Target: `income` (`<=50K` or `>50K`)
@@ -36,7 +36,7 @@ This project predicts whether an individual's income exceeds \$50K/year using th
 
 ## Results
 
-- **Test Accuracy:** *e.g., 87.15%* (update with your actual result)
+- **Test Accuracy:** *e.g., 87.15%*
 - **Precision:** *e.g., 0.7860*
 - **Recall:** *e.g., 0.6597*
 - **F1 Score:** *e.g., 0.7173*
