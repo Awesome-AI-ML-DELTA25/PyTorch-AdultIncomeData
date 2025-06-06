@@ -12,6 +12,9 @@ def load_adultCensus_data(file_path):
     df = pd.read_csv(file_path)
     df.reset_index(drop=True, inplace=True)
 
+    # Converting >50k and <=50K into numbers
+    df['income'] = df['income'].replace({'<=50k': 0, '>50k': 1})
+
     # We will train the model to predict income, since it is a binary variable
     target_col_y = df['income']
     predicting_col_X = df.drop('income', axis=1)
@@ -25,7 +28,7 @@ def load_adultCensus_data(file_path):
 
     preprocessor = ColumnTransformer(
         transformers=[
-            ('categorical', OneHotEncoder(), categorical_col)
+            ('categorical', OneHotEncoder(sparse_output=False), categorical_col),
             ('numerical', StandardScaler(), numerical_col)
         ],
         remainder='drop'
@@ -38,11 +41,10 @@ def load_adultCensus_data(file_path):
     X_train, X_test, y_train, y_test = train_test_split(processed_col_X, target_col_y, test_size=0.2, random_state=7)
 
     # We will now be converting these values into 2D tensors (nested lists):
-
     X_train_tensor = torch.tensor(X_train, dtype=torch.float32)
     X_test_tensor = torch.tensor(X_test, dtype=torch.float32)
-    y_train_tensor = torch.tensor(y_train, dtype=torch.float32).view(-1, 1)
-    y_test_tensor = torch.tensor(y_test, dtype=torch.float32).view(-1, 1)
+    y_train_tensor = torch.tensor(y_train.values, dtype=torch.float32).view(-1, 1)
+    y_test_tensor = torch.tensor(y_test.values, dtype=torch.float32).view(-1, 1)
 
     # .view(-1, 1) converts the 1D tensor into 2D, -1 means as many rows there are, and 1 means the number of columns is 1.
 
