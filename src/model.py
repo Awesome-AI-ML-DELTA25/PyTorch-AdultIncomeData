@@ -15,13 +15,14 @@ class MLP(nn.Module):
     def __init__(self, input_dim):
         super().__init__() # Initialise parent constructor class
 
-        self.mish = Mish()
+        self.mish = Mish()  # To be able to use mish acitvation layer
 
         # Various Model layers
-        self.input = nn.Linear(input_dim, 100)
-        self.hidden_1 = nn.Linear(100, 50)
-        self.hidden_2 = nn.Linear(50, 25)
-        self.output = nn.Linear(25, 1)
+        self.input = nn.Linear(input_dim, 128)
+        self.hidden_1 = nn.Linear(128, 64)
+        self.hidden_2 = nn.Linear(64, 32)
+        self.hidden_3 = nn.Linear(32, 16)
+        self.output = nn.Linear(16, 1)
 
         # To be able to use PReLU later
         self.prelu = nn.PReLU()
@@ -39,9 +40,11 @@ class MLP(nn.Module):
 
         X = self.hidden_2(X)
 
-        #X = self.hidden_2(X)
-
         #X = self.prelu(X)
+
+        X = torch_fn.relu(X)
+
+        X = self.hidden_3(X)
 
         X = torch_fn.relu(X)
 
@@ -51,6 +54,7 @@ class MLP(nn.Module):
 
         return X
     
+    # The below code is for using mish as the activaiton layer:
     '''
     def forward(self, X):
         X = self.input(X)
@@ -69,7 +73,7 @@ class MLP(nn.Module):
         X = self.mish(X)
 
         X = self.output(X)
-        X = torch.sigmoid(X)  # For binary classification
+        X = torch.sigmoid(X)
     
         return X
     '''
