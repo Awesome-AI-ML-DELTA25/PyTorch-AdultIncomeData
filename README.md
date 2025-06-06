@@ -58,7 +58,7 @@ Before we go into detail, the below table shows the accuracy of various models w
 
 ### Comparison Graph:
 
-![Model Comparison](results\Model_Comparison(RL=0.001).png)
+![Model Comparison](results/Model_Comparison(RL=0.001).png)
 
 
 ### Execution - 1
@@ -69,7 +69,7 @@ Dimensions: 64 → 32 → 1
 Number of Epochs: 230  
 Accuracy: 0.8590  
 
-![Loss Curve](results\Figure_1-3_Layers.png)
+![Loss Curve](results/Figure_1-3_Layers.png)
 
 What happens when we increase the number of layers?
 
@@ -81,7 +81,7 @@ Dimensions: 100 → 50 → 25 → 1
 Number of Epochs: 170  
 Accuracy: 0.8571  
 
-![Loss Curve](results\Figure_2-4_Layers.png)
+![Loss Curve](results/Figure_2-4_Layers.png)
 
 Well, the performance dipped, could it be because our dimensions jump is too large (like 100 to 50)?
 
@@ -95,7 +95,7 @@ Dimensions: 128 → 64 → 32 → 16 → 1
 Number of Epochs: 175  
 Accuracy: 0.8605  
 
-![Loss Curve](results\Figure_3-5_Layers(PReLU).png)
+![Loss Curve](results/Figure_3-5_Layers(PReLU).png)
 
 The Parametric Rectified Linear Unit (PReLU) function is defined as:
 
@@ -124,7 +124,7 @@ Accuracy: 0.8613
 
 Turns our ReLU is better than PReLU (in this particual case). We should stick with relu.
 
-![Loss Curve](results\Figure_4-5_Layers.png)
+![Loss Curve](results/Figure_4-5_Layers.png)
 
 Let's increase the number of layers again, last time it worked.
 
@@ -138,7 +138,7 @@ Accuracy: 0.8602
 
 The accuracy dipped, however its still better than a lot of executions till now.
 
-![Loss Curve](results\Figure_5-6_Layers.png)
+![Loss Curve](results/Figure_5-6_Layers.png)
 
 Let us try something new, we keep using ReLU, let us find another activation layer.
 
@@ -165,7 +165,7 @@ where:
 - $e^x$ is the exponential function,  
 - $\tanh$ is the hyperbolic tangent function.
 
-![Loss Curve](results\Figure_6-6_Layers(Mish).png)
+![Loss Curve](results/Figure_6-6_Layers(Mish).png)
 
 
 ## Learning Rate
@@ -182,7 +182,7 @@ Dimensions: 128 → 64 → 32 → 16 → 1
 Number of Epochs: 277  
 Accuracy: 0.8593  
 
-![Loss Curve](results\Figure_7-5_Layers(LR=0.0005).png)
+![Loss Curve](results/Figure_7-5_Layers(LR=0.0005).png)
 
 The accuracy fell down. This could because it got stuck in a local minima. We can't have a small learning rate at the start due to this.
 
@@ -212,7 +212,7 @@ patience = 5 refers that if the metric doesn't improve for 5 epochs, then we wil
 
 The inital learning rate in our case is 0.001.
 
-![Loss Curve](results\Figure_8-5_Layers(Scheduler[0.001.0.5,5]).png)
+![Loss Curve](results/Figure_8-5_Layers(Scheduler[0.001.0.5,5]).png)
 
 The accuracy is second best till now, yet it couldn't beat Execution-4, which we modified to get this.
 
@@ -231,7 +231,7 @@ Accuracy: 0.8615
 
 We have got the best accuracy across all executions till now!
 
-![Loss Curve](results\Figure_9-5_Layers(Scheduler[0.0015,0.5,5]).png)
+![Loss Curve](results/Figure_9-5_Layers(Scheduler[0.0015,0.5,5]).png)
 
 
 ## Conclusion
