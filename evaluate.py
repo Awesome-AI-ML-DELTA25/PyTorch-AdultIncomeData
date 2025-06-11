@@ -12,3 +12,4 @@ def evaluate(model, X_test, y_test):
         print(f"✅ Final Test Accuracy: {acc:.4f}")
         print("Classification Report:")
         print(classification_report(y_test, preds))
+        return acc
