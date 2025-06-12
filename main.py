@@ -47,7 +47,7 @@ if __name__ == "__main__":
         print()
         
         plot_losses(train_losses, test_losses, model_name.lower())
-        evaluate(model, X_test, y_test)
+        # evaluate(model, X_test, y_test)
         all_accuracies[model_name] = evaluate(model, X_test, y_test)
 
     plot_combined_losses(all_train_losses, all_test_losses)
